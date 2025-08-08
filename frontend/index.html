@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Deepfake Detection Project</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Deepfake Spotter</h1>
+            <p>Upload an image to check if it's a deepfake.</p>
+        </header>
+        <main>
+            <div class="upload-area">
+                <input type="file" id="imageUpload" accept="image/png, image/jpeg">
+                <label for="imageUpload" class="upload-label">
+                    <span>Click to Select an Image</span>
+                </label>
+            </div>
+            <div id="imagePreview" class="image-preview"></div>
+            <button id="analyzeButton" class="analyze-button" disabled>Analyze</button>
+            <div id="result" class="result-area">
+                <h2>Result</h2>
+                <p id="prediction">The result will be displayed here.</p>
+            </div>
+        </main>
+        <footer>
+            <p>Project by: Hussain , Junaid, and Zaid</p>
+        </footer>
+    </div>
+    <script src="{{ url_for('static', filename='script.js') }}"></script>
+</body>
+</html>
