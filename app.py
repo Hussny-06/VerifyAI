@@ -89,4 +89,41 @@ def home():
 # `debug=True` enables auto-reloading when you save changes.
 if __name__ == '__main__':
     app.run(debug=True)
+# Note: In a production environment, you would not use `debug=True`.
+# Instead, you would use a production server like Gunicorn or uWSGI.
+# 6. Frontend Files
+# ===========================
+# The frontend files (HTML, CSS, JS) are located in the 'frontend' directory.
+# The `index.html` file is the main page that users will see.
+# The CSS and JS files are linked in the HTML file.
+# The Flask app serves these files from the 'static' and 'template' folders.
+# 7. Future Enhancements
+# ===========================
+# - Integrate a real deepfake detection model.
+# - Implement image preprocessing (resizing, normalization).
+# - Add error handling for model predictions.
+# - Enhance the frontend with better UI/UX.
+# - Consider using a database to store results or user data.
+# - Implement user authentication if needed.
+# - Add logging for better debugging and monitoring.
+# - Consider deploying the app using a cloud service (e.g., Heroku, AWS, etc.).
+# 8. Additional Notes
+# ===========================
+# - Ensure you have Flask installed in your Python environment.
+# - You can install Flask using pip: `pip install Flask`.
+# - The app is designed to be simple and educational.
+# - For production, consider using a more robust server setup.
+# - Always validate and sanitize user inputs to prevent security issues.
+# - Keep your dependencies updated to avoid security vulnerabilities.
+# - Consider using virtual environments to manage dependencies.
+# - Use version control (like Git) to track changes in your code.
+# - Document your code and API endpoints for future reference.
+# - Test your application thoroughly before deploying it.
+# - Consider adding unit tests for your functions to ensure reliability.
+# - Use environment variables for sensitive information (like API keys).
+# - Follow best practices for Flask applications, such as using blueprints for larger apps.
+# - Keep your code modular and organized for better maintainability.
+# - Use a linter (like flake8) to maintain code quality.
+# - Consider using a task queue (like Celery) for background processing if needed.
+# - Monitor your application for performance and errors using tools like Sentry or New Relic.
 
