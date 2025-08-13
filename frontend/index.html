@@ -3,33 +3,160 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Deepfake Detection Project</title>
+    <title>Verify AI</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
 </head>
 <body>
+    <div class="aurora-bg"></div>
     <div class="container">
         <header>
-            <h1>Deepfake Spotter</h1>
-            <p>Upload an image to check if it's a deepfake.</p>
+            <div class="logo">
+                <i class="fas fa-shield-alt"></i>
+            </div>
+            <h1>Verify AI</h1>
+            <p class="subtitle">Advanced AI-powered deepfake detection for images and videos</p>
         </header>
-        <main>
-            <div class="upload-area">
-                <input type="file" id="imageUpload" accept="image/png, image/jpeg">
-                <label for="imageUpload" class="upload-label">
-                    <span>Click to Select an Image</span>
-                </label>
+
+        <div class="app-description">
+            <h2>How It Works</h2>
+            <div class="description-content">
+                <div class="description-item">
+                    <i class="fas fa-upload"></i>
+                    <h3>Upload Media</h3>
+                    <p>Upload an image or video file that you want to analyze for deepfake content</p>
+                </div>
+                <div class="description-item">
+                    <i class="fas fa-brain"></i>
+                    <h3>AI Analysis</h3>
+                    <p>Our advanced neural network examines facial features and artifacts</p>
+                </div>
+                <div class="description-item">
+                    <i class="fas fa-chart-bar"></i>
+                    <h3>Get Results</h3>
+                    <p>Receive a detailed report with confidence level and detection result</p>
+                </div>
             </div>
-            <div id="imagePreview" class="image-preview"></div>
-            <button id="analyzeButton" class="analyze-button" disabled>Analyze</button>
-            <div id="result" class="result-area">
-                <h2>Result</h2>
-                <p id="prediction">The result will be displayed here.</p>
+        </div>
+
+        <div class="content-wrapper">
+            <div class="detection-section">
+                <div class="section-title">
+                    <i class="fas fa-image"></i>
+                    <h2>Image Detection</h2>
+                </div>
+                <p>Upload an image to check for deepfake manipulation</p>
+                
+                <div class="upload-area" id="image-upload-area">
+                    <input type="file" id="imageUpload" class="file-input" accept="image/png, image/jpeg, image/jpg">
+                    <label for="imageUpload" class="upload-label">
+                        <div class="upload-icon">
+                            <i class="fas fa-cloud-upload-alt"></i>
+                        </div>
+                        <div class="upload-text">Click or drag to upload an image</div>
+                        <div class="file-type">Supports: JPG</div>
+                    </label>
+                </div>
+                
+                <div id="imagePreview" class="preview-container">
+                    <div class="placeholder-text">
+                        <i class="fas fa-image fa-2x"></i>
+                        <p>Your image will appear here</p>
+                    </div>
+                </div>
+                
+                <button id="analyzeButton" class="analyze-button" disabled>
+                    <span class="button-text">Analyze Image</span>
+                    <span class="button-icon"><i class="fas fa-search"></i></span>
+                </button>
             </div>
-        </main>
-        <footer>
-            <p>Project by: Hussain , Junaid, and Zaid</p>
+            
+            <div class="detection-section">
+                <div class="section-title">
+                    <i class="fas fa-video"></i>
+                    <h2>Video Detection</h2>
+                </div>
+                <p>Upload a video to analyze for deepfake manipulation</p>
+                
+                <div class="upload-area" id="video-upload-area">
+                    <input type="file" id="videoUpload" class="file-input" accept="video/mp4, video/avi, video/mov">
+                    <label for="videoUpload" class="upload-label">
+                        <div class="upload-icon">
+                            <i class="fas fa-cloud-upload-alt"></i>
+                        </div>
+                        <div class="upload-text">Click or drag to upload a video</div>
+                        <div class="file-type">Supports: MP4</div>
+                    </label>
+                </div>
+                
+                <div id="videoPreview" class="preview-container">
+                    <div class="placeholder-text">
+                        <i class="fas fa-video fa-2x"></i>
+                        <p>Your video will appear here</p>
+                    </div>
+                </div>
+                
+                <button id="analyzeVideoButton" class="analyze-button" disabled>
+                    <span class="button-text">Analyze Video</span>
+                    <span class="button-icon"><i class="fas fa-search"></i></span>
+                </button>
+            </div>
+        </div>
+
+        <div class="result-section">
+            <div class="section-title">
+                <i class="fas fa-chart-bar"></i>
+                <h2>Analysis Result</h2>
+            </div>
+            
+            <div class="progress-container" id="progressContainer">
+                <div id="progressBar" class="progress-bar"></div>
+            </div>
+            
+            <div class="result-content">
+                <p id="prediction">Upload and analyze media to see the detection results</p>
+                
+                <div class="confidence-meter">
+                    <div id="confidenceLevel" class="confidence-level" style="width: 0%"></div>
+                </div>
+                <div class="confidence-labels">
+                    <span>Low Confidence</span>
+                    <span>Medium</span>
+                    <span>High Confidence</span>
+                </div>
+            </div>
+        </div>
+
+        <footer class="footer">
+            <p>Project by: Hussain, Junaid, and Zaid</p>
+            <p>Semester V Mini Project | AI-Powered Deepfake Detection</p>
+            
+            <div class="tech-stack">
+                <div class="tech-item">
+                    <i class="fab fa-python"></i>
+                    <span>Python</span>
+                </div>
+                <div class="tech-item">
+                    <i class="fas fa-brain"></i>
+                    <span>TensorFlow</span>
+                </div>
+                <div class="tech-item">
+                    <i class="fas fa-code"></i>
+                    <span>Flask</span>
+                </div>
+                <div class="tech-item">
+                    <i class="fab fa-js"></i>
+                    <span>JavaScript</span>
+                </div>
+                <div class="tech-item">
+                    <i class="fas fa-network-wired"></i>
+                    <span>Neural Networks</span>
+                </div>
+            </div>
         </footer>
     </div>
+
     <script src="{{ url_for('static', filename='script.js') }}"></script>
 </body>
 </html>
