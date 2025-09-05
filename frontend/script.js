@@ -93,6 +93,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
             const result = await response.json();
             progressBar.style.width = '100%';
+            document.getElementById('result-section-id').scrollIntoView({ behavior: 'smooth', block: 'start' });
 
             // --- FIX #3: Handle the actual JSON response from the backend ---
             // The backend sends 'prediction' and 'confidence' (as a string like "95.24%")

@@ -316,6 +316,7 @@
 
         .confidence-level {
             height: 100%;
+            width: 0%;
             border-radius: 10px;
             background: linear-gradient(90deg, var(--danger), var(--warning), var(--success));
             transition: width 0.8s ease;
