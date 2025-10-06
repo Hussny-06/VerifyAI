@@ -1,1 +1,55 @@
+# Virtual Environment
+venv/
+env/
+.env/
+.venv/
 
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+build/
+develop-eggs/
+dist/
+downloads/
+eggs/
+.eggs/
+lib/
+lib64/
+parts/
+sdist/
+var/
+wheels/
+*.egg-info/
+.installed.cfg
+*.egg
+
+# IDE specific files
+.idea/
+.vscode/
+*.swp
+*.swo
+*~
+
+# Jupyter Notebook
+.ipynb_checkpoints
+
+# TensorFlow specific
+# Keeping model files in version control for this project
+# *.h5
+# *.hdf5
+*.ckpt
+*.pb
+checkpoint
+model.*/
+
+# OS specific
+.DS_Store
+Thumbs.db
+
+# Logs and databases
+*.log
+*.sqlite
+*.db
