@@ -90,7 +90,7 @@ This runs a simple API server. *Note: Ensure you have renamed the original Flask
 * The API will be available at `http://localhost:5000`. You can send POST requests to the `/analyze` endpoint with an image file attached (key: 'image').
 
 ## Project Structure 📁
-
+'''text
 VerifyAI/
 ├── .git/
 ├── .venv/ # Virtual environment files (ignored by git)
@@ -109,6 +109,7 @@ VerifyAI/
 ├── requirements.txt # Project dependencies
 ├── resnet50_v1.keras # Champion model file
 └── tl_history.npy # Training history for the champion model
+'''
 
 ## Future Work 🔮
 
