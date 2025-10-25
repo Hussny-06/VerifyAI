@@ -1,4 +1,4 @@
-# app.py - VerifyAI v2 (ResNet-50)
+# app.py - VerifyAI v1 (ResNet-50)
 
 from flask import Flask, request, jsonify, render_template
 import tensorflow as tf
@@ -9,12 +9,12 @@ import io
 # 1. Initialize the Flask Application
 app = Flask(__name__, static_folder='frontend', template_folder='frontend')
 
-# 2. Define Image Size (NEW)
+# 2. Define Image Size 
 # Our ResNet-50 model expects 128x128 images
 IMG_HEIGHT = 128
 IMG_WIDTH = 128
 
-# 3. Load the Trained Model at Startup (MODIFIED)
+# 3. Load the Trained Model at Startup 
 print("Loading ResNet-50 deepfake detector, please wait...")
 try:
     # Load the new, high-performance .keras model
@@ -25,7 +25,7 @@ except Exception as e:
     model = None
 
 # 4. Preprocessing Function (CRITICAL MODIFICATION)
-# This now matches the preprocessing from our Colab notebook.
+# preprocessing similar to model training .
 def preprocess_image(image_file):
     """
     Takes an image file, opens it, resizes it to 128x128,
@@ -53,8 +53,7 @@ def preprocess_image(image_file):
     
     return preprocessed_array
 
-# 5. Prediction Function (MODIFIED)
-# The logic is the same, but the class names are clearer.
+# 5. Prediction Function 
 def predict_deepfake(image_array):
     """
     Takes a preprocessed image array and returns a prediction from the model.
@@ -80,7 +79,7 @@ def predict_deepfake(image_array):
             "confidence": f"{confidence:.2%}"
         }
 
-# 6. Define the API Endpoint (Unchanged logic)
+# 6. Define the API Endpoint 
 @app.route('/analyze', methods=['POST'])
 def analyze_image():
     if 'image' not in request.files:
@@ -104,11 +103,13 @@ def analyze_image():
             print(f"An error occurred during analysis: {e}")
             return jsonify({"error": "Failed to analyze image."}), 500
 
-# 7. Define the Route for the Main Page (Unchanged)
+# 7. Define the Route for the Main Page 
 @app.route('/')
 def home():
     return render_template('index.html')
 
-# 8. Run the Application (Unchanged)
+# 8. Run the Application 
 if __name__ == '__main__':
+    # threaded=False is often recommended when using TensorFlow with Flask
+    # to avoid potential conflicts in multi-threaded environments.
     app.run(debug=True, threaded=False)
