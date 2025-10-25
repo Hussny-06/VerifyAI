@@ -2,3 +2,6 @@ flask==3.0.0
 tensorflow==2.20.0  # Or your specific TF version, 2.16.1 is stable
 numpy
 pillow
+streamlit
+opencv-python-headless
+matplotlib
