@@ -112,6 +112,7 @@ VerifyAI/
 └── tl_history.npy            # Training history (numpy)
 ```
 
+
 ## Future Work 🔮
 
 * **Implement Video Analysis:** Extend the detection capabilities to analyze video files, potentially incorporating temporal analysis techniques (e.g., using CNN+LSTM or Transformers) to identify inconsistencies between frames.
