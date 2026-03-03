@@ -55,7 +55,7 @@ VerifyAI is an AI-powered tool designed to detect deepfake images, distinguishin
     pip install -r requirements.txt
     ```
 
-4. **(Optional - Git LFS):** If Git LFS was implemented for model files, ensure it's installed (`git lfs install`) and pull the large files (`git lfs pull`). *(Note: Currently, the model is directly in Git, which is not ideal for large files)*.
+4. **(Optional - Git LFS):** Git LFS was implemented for model files, ensure it's installed (`git lfs install`) and pull the large files (`git lfs pull`). .
 
 ## Usage 🚀
 
